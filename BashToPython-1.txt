@@ -1,0 +1,470 @@
+
+Переписываем цикл статей с Хабра - https://habr.com/company/ruvds/blog/325522/
+
+Цель - Учебно тренировочная и обучающая
+Практический смысл - посмотреть реализацию.
+
+Оглавление:
+
+1. https://habrahabr.ru/company/ruvds/blog/325522/
+2. https://habrahabr.ru/company/ruvds/blog/325928/
+3. https://habrahabr.ru/company/ruvds/blog/326328/
+4. https://habrahabr.ru/company/ruvds/blog/326594/
+5. https://habrahabr.ru/company/ruvds/blog/326826
+6. https://habrahabr.ru/company/ruvds/blog/327248/
+7. https://habrahabr.ru/company/ruvds/blog/327530/
+8. https://habrahabr.ru/company/ruvds/blog/327754/
+9. https://habrahabr.ru/company/ruvds/blog/327896/
+10. https://habrahabr.ru/company/ruvds/blog/328346/
+11. https://habrahabr.ru/company/ruvds/blog/328436/
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+==== 1. Примеры первой статьи. ===
+
+****************************************
+-- Bash --
+
+#!/bin/bash
+# our comment is here
+echo "The current directory is:"
+pwd
+
+echo "The user logged in is:"
+whoami
+
+-- Python --
+#!/usr/bin/python
+
+# This is a comment
+
+import os
+
+print("The current directory is: ")
+print(os.getcwd())
+
+print("The user logged in is:")
+print(os.getlogin())
+
+*****************************************
+
+-- Bash --
+
+#!/bin/bash
+# display user home
+
+echo "Home for the current user is: $HOME"
+
+
+
+-- Python --
+# !/usr/bin/python
+# This is a comment
+
+import os
+
+print("Home for the current user is: ", os.path.expanduser('~user'))
+
+
+
+*****************************************
+-- Bash --
+#!/bin/bash
+echo "I have \$1 in my pocket"
+
+
+
+-- Python --
+# !/usr/bin/python
+print("I have $1 in my pocket")
+
+#!/usr/bin/python3
+print(str("I have $1 in my pocket"))
+
+
+*****************************************
+-- Bash --
+#!/bin/bash
+# testing variables
+
+grade=5
+person="Adam"
+
+echo "$person is a good boy, he is in grade $grade"
+
+
+-- Python --
+#!/usr/bin/python
+# testing variables
+
+grade = 5
+person = "Adam"
+print person, 'is a good boy, he is in grade', grade
+
+
+#!/usr/bin/python3
+# testing variables
+
+grade = 5
+person = "Adam"
+print(person, 'is a good boy, he is in grade', grade)
+
+*****************************************
+
+-- Bash --
+#!/bin/bash
+
+mydir=$(pwd)
+echo $mydir
+
+
+
+-- Python --
+#!/usr/bin/python3
+
+import os
+
+mydir = os.getcwd()
+print(mydir)
+
+
+*****************************************
+
+-- Bash --
+#!/bin/bash
+var1=$(( 5 + 5 ))
+echo $var1
+
+var2=$(( $var1 * 2 ))
+echo $var2
+
+
+-- Python --
+#!/usr/bin/python3
+var1 =  (5 + 5)
+print(var1)
+
+var2 = (var1 * 2 )
+print(var2)
+
+
+*****************************************
+
+-- Bash --
+#!/bin/bash
+if pwd
+then
+echo "It works"
+fi
+
+
+-- Python --
+#!/usr/bin/python3
+import os
+
+if (os.getcwd()):
+    print("It works")
+else:
+    False
+    
+*****************************************
+
+-- Bash --
+#!/bin/bash
+user=super
+
+if grep $user /etc/passwd
+then
+
+echo "The user $user Exists"
+
+fi
+
+
+-- Python --
+#!/usr/bin/python3
+
+import os
+
+path = '/etc/passwd' 
+user = "super"
+
+with open(path, 'r', encoding='UTF-8') as f:
+    for line in f:
+        if user in line:
+            print(line)
+            print("The user, user, Exists")
+            break
+    else:
+            False
+
+
+*****************************************
+
+-- Bash --
+#!/bin/bash
+user=repus
+
+if grep $user /etc/passwd
+then
+
+echo "The user $user Exists"
+else
+
+echo "The user $user doesn’t exist"
+fi
+
+
+
+
+-- Python --
+#!/usr/bin/python3
+
+import os
+
+path = "/etc/passwd"
+u = "repus"
+
+with open(path, 'r', encoding='UTF-8') as f:
+    for line in f:
+        if u in line:
+            print(line)
+            print("The user", u, "Exists")
+            break
+    else:
+          print("The user", u, "doesn’t exist")
+
+
+*****************************************
+
+-- Bash --
+#!/bin/bash
+user=repus
+
+if grep $user /etc/passwd
+then
+echo "The user $user Exists"
+
+elif ls /home
+
+then
+echo "The user doesn’t exist but anyway there is a directory under /home"
+fi
+
+
+
+-- Python --
+#!/usr/bin/python3
+
+import os, sys
+
+path = "/etc/passwd"
+directory = "/home"
+usr = "repus"
+
+with open(path, 'r', encoding='UTF-8') as f:
+    for line in f:
+        if usr in line:
+            print(line)
+            print("The user", usr, "Exists")
+            break
+    else:
+        print(str(os.listdir(directory)))
+        print("The user doesn’t exist but anyway there is a directory under /home")
+
+
+*****************************************
+
+
+n1 -eq n2Возвращает истинное значение, если n1 равно n2.
+n1 -ge n2 Возвращает истинное значение, если n1больше или равно n2.
+n1 -gt n2Возвращает истинное значение, если n1 больше n2.
+n1 -le n2Возвращает истинное значение, если n1меньше или равно n2.
+n1 -lt n2Возвращает истинное значение, если n1 меньше n2.
+n1 -ne n2Возвращает истинное значение, если n1не равно n2.
+
+
+-- Bash --
+#!/bin/bash
+val1=6
+
+if [ $val1 -gt 5 ]
+then
+echo "The test value $val1 is greater than 5"
+
+else
+echo "The test value $val1 is not greater than 5"
+
+fi
+
+
+# Логические опараторы
+# > Больше
+# < Меньше
+# == Равно
+# != Не равно
+# >= Больше или равно
+# <= Меньше или равно
+
+
+-- Python --
+# !/usr/bin/python3
+
+val1 = 6
+
+if (val1 >= 5):
+    print("The test value ", val1, "is greater than 5")
+else:
+    print("The test value ", val1, "is not greater than 5")
+
+
+*****************************************
+str1 = str2 Проверяет строки на равенство, возвращает истину, если строки идентичны.
+str1 != str2Возвращает истину, если строки не идентичны.
+str1 < str2Возвращает истину, если str1меньше, чем str2.
+str1 > str2 Возвращает истину, если str1больше, чем str2.
+-n str1 Возвращает истину, если длина str1больше нуля.
+-z str1Возвращает истину, если длина str1равна нулю.
+
+
+-- Bash --
+#!/bin/bash
+user ="super"
+
+if [$user = $USER]
+then
+
+echo "The user $user  is the current logged in user"
+fi
+
+
+-- Python --
+# !/usr/bin/python3
+
+import os
+
+user = "super"
+
+if 'user' == (os.getlogin()):
+    print("The user", user, "is the current logged in user")
+else:
+    False
+
+
+*****************************************
+
+-- Bash --
+#!/bin/bash
+val1=text
+val2="another text"
+if [ $val1 \> "$val2" ]
+then
+echo "$val1 is greater than $val2"
+else
+echo "$val1 is less than $val2"
+fi
+
+
+-- Python --
+# !/usr/bin/python3
+
+val1 = 'text'
+val2 = 'another text'
+
+if val1 > val2:
+    print(val1, "is greater than", val2)
+else:
+    print(val1, "is less than", val2)
+
+
+
+# !/usr/bin/python3
+
+val1 = 'text'
+val2 = 'another text'
+
+str1 = set(val1.split(' '))
+str2 = set(val2.split(' '))
+
+print(str(str1 == str2))
+
+if str1 > str2:
+    print(val1, "is greater than", val2)
+else:
+    print(val1, "is less than", val2)
+
+
+
+*****************************************
+-- Bash --
+#!/bin/bash
+val1=Likegeeks
+val2=legeikeks
+if [ $val1 \> $val2 ]
+then
+echo "$val1 is greater than $val2"
+else
+echo "$val1 is less than $val2"
+fi
+
+
+
+-- Python --
+#!/usr/bin/python3
+
+val1 = 'Likegeeks'
+val2 = 'legeikeks'
+
+if val1 > val2:
+    print(val1, "is greater than", val2)
+else:
+    print(val1, "is less than", val2)
+
+*****************************************
+
+-- Bash --
+
+-d fileПроверяет, существует ли файл, и является ли он директорией.
+-e fileПроверяет, существует ли файл.
+-f file Проверяет, существует ли файл, и является ли он файлом.
+-r fileПроверяет, существует ли файл, и доступен ли он для чтения.
+-s file Проверяет, существует ли файл, и не является ли он пустым.
+-w fileПроверяет, существует ли файл, и доступен ли он для записи.
+-x fileПроверяет, существует ли файл, и является ли он исполняемым.
+file1 -nt file2 Проверяет, новее ли file1, чем file2.
+file1 -ot file2Проверяет, старше ли file1, чем file2.
+-O file Проверяет, существует ли файл, и является ли его владельцем текущий пользователь.
+-G fileПроверяет, существует ли файл, и соответствует ли его идентификатор группы идентификатору группы текущего пользователя.
+
+
+#!/bin/bash
+mydir=/home/likegeeks
+
+if [ -d $mydir ]
+then
+echo "The $mydir directory exists"
+
+cd $ mydir
+ls
+else
+echo "The $mydir directory does not exist"
+fi
+
+
+
+-- Python --
+#!/usr/bin/python3
+
+import os
+
+mydir = '/home/likegeeks'
+
+if os.path.exists(mydir):
+    print('The', mydir, 'directory exists')
+    print(os.listdir(mydir))
+else:
+    print('The', mydir, 'directory does not exist')
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

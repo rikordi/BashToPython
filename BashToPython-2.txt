@@ -1,0 +1,94 @@
+
+
+Переписываем цикл статей с Хабра - https://habr.com/company/ruvds/blog/325522/
+
+
+Цель - Учебно тренировочная и обучающая
+Практический смысл - посмотреть реализацию.
+
+
+Оглавление:
+
+1. https://habrahabr.ru/company/ruvds/blog/325522/
+2. https://habrahabr.ru/company/ruvds/blog/325928/
+3. https://habrahabr.ru/company/ruvds/blog/326328/
+4. https://habrahabr.ru/company/ruvds/blog/326594/
+5. https://habrahabr.ru/company/ruvds/blog/326826
+6. https://habrahabr.ru/company/ruvds/blog/327248/
+7. https://habrahabr.ru/company/ruvds/blog/327530/
+8. https://habrahabr.ru/company/ruvds/blog/327754/
+9. https://habrahabr.ru/company/ruvds/blog/327896/
+10. https://habrahabr.ru/company/ruvds/blog/328346/
+11. https://habrahabr.ru/company/ruvds/blog/328436/
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+==== 1. Примеры второй статьи. ===
+
+****************************************
+-- Bash --
+#!/bin/bash
+for var in first second third fourth fifth
+do
+
+echo The  $var item
+done
+
+-- Python --
+#!/usr/bin/python3
+
+for var in 'first', 'second', 'third', 'fourth', 'fifth':
+    print("------------")
+    print('var = ', var)
+    
+    print()
+
+****************************************
+
+-- Bash --
+#!/bin/bash
+
+#!/bin/bash
+for var in first "the second" "the third" "I’ll do it"
+do
+echo "This is: $var"
+done
+
+
+-- Python --
+#!/usr/bin/python3
+for var in ('first', "the second", "the third" "I’ll do it"):
+    print("------------")
+    print('var = ', var)
+    
+    print()
+
+****************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
