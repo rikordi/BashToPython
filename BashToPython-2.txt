@@ -2,10 +2,7 @@
 
 Переписываем цикл статей с Хабра - https://habr.com/company/ruvds/blog/325522/
 
-
-Цель - Учебно тренировочная и обучающая
-Практический смысл - посмотреть реализацию.
-
+Примеры с цикла статей - https://habr.com/company/ruvds/blog/325522/
 
 Оглавление:
 
@@ -22,7 +19,11 @@
 11. https://habrahabr.ru/company/ruvds/blog/328436/
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 ==== 1. Примеры второй статьи. ===
 
@@ -56,6 +57,7 @@ echo "This is: $var"
 done
 
 
+
 -- Python --
 #!/usr/bin/python3
 for var in ('first', "the second", "the third" "I’ll do it"):
@@ -66,6 +68,187 @@ for var in ('first', "the second", "the third" "I’ll do it"):
 
 ****************************************
 
+-- Bash --
+#!/bin/bash
+
+file="myfile"
+
+for var in $(cat $file)
+do
+
+echo " $var"
+done
+
+
+-- Python --
+#!/usr/bin/python3
+
+import os
+
+DIR = "./"
+file = "myfile"
+
+with open(os.path.join((os.getcwd()), file), 'r', encoding='UTF-8') as f:
+    for line in f: 
+        print(line)
+
+
+****************************************
+
+-- Bash --
+#!/bin/bash
+file="/etc/passwd"
+IFS=$'\n'
+for var in $(cat $file)
+do
+echo " $var"
+done
+
+
+-- Python --
+
+Работае над строками и с пробелами
+
+
+****************************************
+
+-- Bash --
+#!/bin/bash
+for file in /home/likegeeks/*
+do
+
+if [ -d "$file" ]
+then
+echo "$file is a directory"
+
+elif [ -f "$file" ]
+then
+echo "$file is a file"
+fi
+done
+
+
+-- Python --
+#!/usr/bin/python3
+
+import os
+
+homedir = '/root/'
+
+for list in (os.listdir(homedir)):
+    if os.path.isdir(homedir):
+        print(list, "is a directory")  
+    if os.path.isdir(homedir):    
+        print(list, "is a file")
+    else:
+        print(list, "is dir empty")
+
+
+****************************************
+Стиль C:
+
+for (i = 0; i < 10; i++)
+{
+printf("number is %d\n", i);
+}
+
+
+-- Bash --
+for (( a = 1; a < 10; a++ ))
+
+#!/bin/bash
+for (( i=1; i <= 10; i++ ))
+do
+echo "number is $i"
+done
+
+
+-- Python --
+#!/usr/bin/python3
+
+start = 1
+end = 11
+for i in range(start, end):
+    print("number is", i)
+
+
+
+****************************************
+
+-- Bash --
+#!/bin/bash
+var1=5
+while [ $var1 -gt 0 ]
+do
+echo $var1
+var1=$[ $var1 - 1 ]
+done
+
+
+-- Python --
+#!/usr/bin/python3
+
+var1 = 5
+
+while var1 != 0:
+    print(var1)
+    var1 -= 1
+
+
+
+****************************************
+
+-- Bash --
+#!/bin/bash
+for (( a = 1; a <= 3; a++ ))
+do
+echo "Start $a:"
+
+for (( b = 1; b <= 3; b++ ))
+do
+echo " Inner loop: $b"
+done
+
+done
+
+
+
+-- Python --
+#!/usr/bin/python3
+
+for i in range(1, 4):
+    for j in range(1, 4):
+        print("Inner loop:", j)
+
+
+    print("start is", i)
+
+
+****************************************
+
+#!/bin/bas
+
+
+
+#!/usr/bin/python3
+
+
+****************************************
+
+
+
+
+
+****************************************
+
+#!/bin/bas
+
+
+
+#!/usr/bin/python3
+
+
+****************************************
 
 
 
@@ -73,18 +256,32 @@ for var in ('first', "the second", "the third" "I’ll do it"):
 
 
 
+****************************************
+
+#!/bin/bas
+
+
+
+#!/usr/bin/python3
+
+
+****************************************
 
 
 
 
 
 
+****************************************
+
+#!/bin/bas
 
 
 
+#!/usr/bin/python3
 
 
-
+****************************************
 
 
 
