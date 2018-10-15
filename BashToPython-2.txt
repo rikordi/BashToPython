@@ -261,6 +261,91 @@ with open(path, 'r', encoding='UTF-8') as f:
 #!/bin/bash
 
 
+for var1 in 1 2 3 4 5 6 7 8 9 10
+do
+if [ $var1 -eq 5 ]
+then
+break
+fi
+echo "Number: $var1"
+done
+
+
+
+-- Python --
+#!/usr/bin/python3
+
+for var1 in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+    if (var1 == 5):
+        print("Number: ", var1)
+        break
+print()
+
+
+****************************************
+
+-- Bash --
+#!/bin/bash
+
+var1=1
+while [ $var1 -lt 10 ]
+do
+if [ $var1 -eq 5 ]
+then
+break
+fi
+echo "Iteration: $var1"
+var1=$(( $var1 + 1 ))
+done
+
+-- Python --
+#!/usr/bin/python3
+var1 = 1
+while var1 < 10:
+    if(var1 == 6):
+        break
+    print("Iteration: ", var1)
+    var1 += 1
+
+****************************************
+
+
+-- Bash --
+
+#!/bin/bash
+for (( var1 = 1; var1 < 15; var1++ ))
+do
+if [ $var1 -gt 5 ] && [ $var1 -lt 10 ]
+then
+continue
+fi
+echo "Iteration number: $var1"
+done
+
+
+-- Python --
+#!/usr/bin/python3
+
+
+****************************************
+
+   
+-- Bash --
+#!/bin/bash
+
+
+
+-- Python --
+#!/usr/bin/python3
+
+
+****************************************
+
+
+
+-- Bash --
+#!/bin/bash
+
 
 
 -- Python --
@@ -272,43 +357,13 @@ with open(path, 'r', encoding='UTF-8') as f:
 
 
 
-
-
-
-****************************************
-
+-- Bash --
 #!/bin/bash
 
 
 
+-- Python --
 #!/usr/bin/python3
 
 
 ****************************************
-
-
-
-
-
-
-****************************************
-
-#!/bin/bash
-
-
-
-#!/usr/bin/python3
-
-
-****************************************
-
-   
-
-
-
-
-
-
-
-
-
